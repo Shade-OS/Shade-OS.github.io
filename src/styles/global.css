@@ -472,23 +472,120 @@
     scale: 1 1;
   }
 
+  /* ── mobil menü ──────────────────────────────────────────────────────
+     Dar ekranda bağlantılar GİZLENMEZ, açılır panele taşınır. Önceki
+     sürümde 560px altında ilk ikisi dışındaki her bağlantı display:none
+     ile siliniyordu; dört bağlantıdan "kurulum" ve "sss" telefonda
+     hiçbir yerden erişilemiyordu. Eşik, Nav.tsx'teki MOBILE_BREAKPOINT
+     ile aynı olmalı. */
+
   .nav__cta {
+    display: inline-flex;
+  }
+
+  .nav__toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    /* 44px: dokunma hedefi için önerilen alt sınır. */
+    width: 44px;
+    height: 44px;
+    margin-right: -0.5rem;
+    color: var(--fg-2);
+    background: none;
+    border: 0;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  .nav__toggle:hover {
+    color: var(--fg);
+  }
+  .nav__toggle:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  .nav__burger {
+    display: grid;
+    gap: 4px;
+    width: 18px;
+  }
+  .nav__burger > span {
+    height: 1.5px;
+    background: currentColor;
+    transition:
+      translate 0.22s var(--ease),
+      rotate 0.22s var(--ease),
+      opacity 0.16s;
+  }
+  .nav[data-open='true'] .nav__burger > span:nth-child(1) {
+    translate: 0 5.5px;
+    rotate: 45deg;
+  }
+  .nav[data-open='true'] .nav__burger > span:nth-child(2) {
+    opacity: 0;
+  }
+  .nav[data-open='true'] .nav__burger > span:nth-child(3) {
+    translate: 0 -5.5px;
+    rotate: -45deg;
+  }
+
+  .nav__panel-cta {
     display: none;
   }
+
   @media (min-width: 780px) {
-    .nav__cta {
-      display: inline-flex;
-    }
-  }
-  @media (max-width: 779px) {
-    .nav__links {
-      gap: 1.1rem;
-      font-size: 0.75rem;
-    }
-  }
-  @media (max-width: 560px) {
-    .nav__links a[data-optional='true'] {
+    .nav__toggle {
       display: none;
+    }
+  }
+
+  @media (max-width: 779px) {
+    .nav__cta {
+      display: none;
+    }
+
+    /* Panel .nav'a göre konumlanır: .nav sticky, yani konumlandırılmış
+       sayılır, dolayısıyla panel şeridin değil ekranın tam genişliğini
+       kaplar. */
+    .nav__links {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 100%;
+      display: none;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+      /* --shell = min(1180px, 100% - 2rem): mobilde kenarda 1rem pay var,
+         panel içeriğini de aynı hizaya getiriyoruz. */
+      padding: 0.35rem 1rem 1.1rem;
+      font-size: 0.9375rem;
+      background: var(--nav-bg);
+      backdrop-filter: blur(14px) saturate(140%);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav__links[data-open='true'] {
+      display: flex;
+    }
+
+    .nav__links a {
+      display: flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 0.35rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+    /* Alt çizgi animasyonu satır içi menü içindi; dikey listede anlamsız. */
+    .nav__links a::after {
+      content: none;
+    }
+
+    .nav__panel-cta {
+      display: inline-flex;
+      justify-content: center;
+      margin-top: 0.9rem;
+      border-bottom: 0;
     }
   }
 
