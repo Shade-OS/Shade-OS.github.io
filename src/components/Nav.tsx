@@ -49,6 +49,14 @@ export function Nav() {
     <header className="nav" data-stuck={stuck}>
       <div className="shell nav__inner">
         <a className="brand" href="#top" aria-label={`${site.name} — başa dön`}>
+          <img
+            className="brand__mark"
+            src="/mark-512.png"
+            width="512"
+            height="512"
+            alt=""
+            decoding="async"
+          />
           <span className="brand__dim">~/</span>
           {site.name.toLowerCase()}
           <span className="brand__caret" aria-hidden="true" />

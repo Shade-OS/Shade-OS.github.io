@@ -4,7 +4,7 @@ const KEY = 'shadeos-theme'
 
 const BG: Record<Theme, string> = {
   dark: '#000000',
-  light: '#f1f1ee',
+  light: '#f2f1f7',
 }
 
 /** index.html'deki başlangıç betiği temayı zaten yazdı; buradan okuyoruz. */

@@ -54,34 +54,45 @@
     --ease: cubic-bezier(0.22, 1, 0.36, 1);
   }
 
+  /*
+   * Marka paleti — kaynak: ShadeOS uygulama ikonu (mark-512.png)
+   *   #9D94D8  lavanta-mor  (birincil)
+   *   #95BCE3  açık mavi    (ikincil / geçişler)
+   *   #DAD5F0  açık ton
+   * Açık temada aynı ton daha koyu tutulur: pastel değerler beyaz üstünde
+   * metin kontrastını (WCAG AA 4.5:1) karşılamaz.
+   */
+
   /* koyu — varsayılan */
   :root,
   :root[data-theme='dark'] {
     color-scheme: dark;
 
     --bg: #000000;
-    --bg-1: #060607;
-    --bg-2: #0b0b0d;
-    --bg-3: #101014;
+    --bg-1: #06060a;
+    --bg-2: #0b0b12;
+    --bg-3: #101018;
 
-    --line: #1a1a1f;
-    --line-2: #26262d;
-    --line-3: #3a3a44;
+    --line: #1a1a24;
+    --line-2: #26262f;
+    --line-3: #3a3a48;
 
-    --fg: #ececee;
-    --fg-2: #9a9aa4;
-    --fg-3: #5a5a64;
+    --fg: #ececf0;
+    --fg-2: #9a9aa8;
+    --fg-3: #5a5a6a;
 
-    --accent: #00e08a;
-    --accent-2: #7ffcd0;
-    --accent-soft: rgb(0 224 138 / 0.1);
-    --accent-line: rgb(0 224 138 / 0.3);
-    --accent-glow: rgb(0 224 138 / 0.5);
-    --on-accent: #000000;
+    --accent: #9d94d8; /* siyah üstünde 7.7:1 */
+    --accent-hi: #b8b0e8;
+    --accent-2: #95bce3;
+    --accent-tint: #dad5f0;
+    --accent-soft: rgb(157 148 216 / 0.12);
+    --accent-line: rgb(157 148 216 / 0.32);
+    --accent-glow: rgb(157 148 216 / 0.5);
+    --on-accent: #0b0a14;
 
-    --warn: #ffb648;
-    --warn-soft: rgb(255 182 72 / 0.08);
-    --warn-line: rgb(255 182 72 / 0.3);
+    --warn: #f0b678;
+    --warn-soft: rgb(240 182 120 / 0.09);
+    --warn-line: rgb(240 182 120 / 0.3);
 
     --grid: rgb(255 255 255 / 0.032);
     --scan: rgb(255 255 255 / 0.014);
@@ -89,13 +100,13 @@
     --grain-opacity: 0.038;
 
     --nav-bg: rgb(0 0 0 / 0.72);
-    --glow: rgb(0 224 138 / 0.1);
-    --spot: rgb(0 224 138 / 0.062);
-    --shine: rgb(255 255 255 / 0.45);
+    --glow: rgb(157 148 216 / 0.12);
+    --spot: rgb(157 148 216 / 0.07);
+    --shine: rgb(255 255 255 / 0.5);
 
     --wm-a: #ffffff;
-    --wm-b: #8e8e99;
-    --wm-c: #4a4a54;
+    --wm-b: #9490a8;
+    --wm-c: #4c4a5c;
 
     --shadow:
       0 0 0 1px rgb(0 0 0 / 0.6), 0 30px 70px -30px rgb(0 0 0 / 0.9);
@@ -105,43 +116,45 @@
   :root[data-theme='light'] {
     color-scheme: light;
 
-    --bg: #f1f1ee;
-    --bg-1: #f8f8f6;
+    --bg: #f2f1f7;
+    --bg-1: #f8f8fc;
     --bg-2: #ffffff;
-    --bg-3: #eaeae4;
+    --bg-3: #eae9f2;
 
-    --line: #dedcd4;
-    --line-2: #c6c3b9;
-    --line-3: #a5a298;
+    --line: #dedce8;
+    --line-2: #c6c3d4;
+    --line-3: #a5a2b5;
 
-    --fg: #12120e;
-    --fg-2: #55554b;
-    --fg-3: #84847a;
+    --fg: #14121c;
+    --fg-2: #55525f;
+    --fg-3: #84818f;
 
-    --accent: #00875a;
-    --accent-2: #006a46;
-    --accent-soft: rgb(0 135 90 / 0.09);
-    --accent-line: rgb(0 135 90 / 0.32);
-    --accent-glow: rgb(0 135 90 / 0.32);
+    --accent: #6c5dd3; /* beyaz üstünde 5.1:1 */
+    --accent-hi: #5544bd;
+    --accent-2: #4a87be;
+    --accent-tint: #8b7fdd;
+    --accent-soft: rgb(108 93 211 / 0.1);
+    --accent-line: rgb(108 93 211 / 0.32);
+    --accent-glow: rgb(108 93 211 / 0.32);
     --on-accent: #ffffff;
 
-    --warn: #a35c00;
-    --warn-soft: rgb(163 92 0 / 0.08);
-    --warn-line: rgb(163 92 0 / 0.28);
+    --warn: #9a5f16;
+    --warn-soft: rgb(154 95 22 / 0.08);
+    --warn-line: rgb(154 95 22 / 0.28);
 
-    --grid: rgb(0 0 0 / 0.045);
-    --scan: rgb(0 0 0 / 0.014);
+    --grid: rgb(20 18 28 / 0.05);
+    --scan: rgb(20 18 28 / 0.014);
     --scan-opacity: 0.35;
     --grain-opacity: 0.05;
 
-    --nav-bg: rgb(241 241 238 / 0.8);
-    --glow: rgb(0 135 90 / 0.1);
-    --spot: rgb(0 135 90 / 0.05);
+    --nav-bg: rgb(242 241 247 / 0.8);
+    --glow: rgb(108 93 211 / 0.1);
+    --spot: rgb(108 93 211 / 0.05);
     --shine: rgb(255 255 255 / 0.55);
 
-    --wm-a: #0a0a07;
-    --wm-b: #6a6a60;
-    --wm-c: #a8a89d;
+    --wm-a: #0c0a14;
+    --wm-b: #6a6778;
+    --wm-c: #a8a5b8;
 
     --shadow:
       0 1px 0 rgb(0 0 0 / 0.03), 0 26px 54px -30px rgb(0 0 0 / 0.3);
@@ -288,7 +301,7 @@
     left: 0;
     width: 72px;
     height: 1px;
-    background: var(--accent);
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
   }
 
   .section__head {
@@ -386,6 +399,21 @@
     letter-spacing: -0.03em;
     font-size: 1.0625rem;
     white-space: nowrap;
+  }
+  /* ShadeOS uygulama ikonu — public/mark-512.png */
+  .brand__mark {
+    flex: none;
+    align-self: center;
+    width: 1.4rem;
+    height: 1.4rem;
+    margin-right: 0.45rem;
+    transition:
+      rotate 0.5s var(--ease),
+      scale 0.25s var(--ease);
+  }
+  .brand:hover .brand__mark {
+    rotate: -8deg;
+    scale: 1.09;
   }
   .brand__dim {
     color: var(--fg-3);
@@ -545,8 +573,8 @@
     font-weight: 700;
   }
   .btn--primary:hover:not(:disabled) {
-    background: var(--accent-2);
-    border-color: var(--accent-2);
+    background: var(--accent-hi);
+    border-color: var(--accent-hi);
     color: var(--on-accent);
     box-shadow: 0 0 32px -6px var(--accent-glow);
   }
@@ -686,7 +714,13 @@
     right: 0;
     bottom: -0.1em;
     height: 2px;
-    background: linear-gradient(90deg, var(--accent), transparent 85%);
+    /* logonun iki tonu: mor → mavi */
+    background: linear-gradient(
+      90deg,
+      var(--accent),
+      var(--accent-2) 48%,
+      transparent 88%
+    );
   }
 
   .hero__tagline {

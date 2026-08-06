@@ -4,11 +4,11 @@
  */
 
 /**
- * ⚠ ALAN ADI — yayına almadan önce burayı değiştir.
- * canonical, og:url, sitemap.xml ve robots.txt hep buradan türetilir.
+ * Alan adı — canonical, og:url, sitemap.xml ve robots.txt buradan türetilir.
  * Sonunda eğik çizgi OLMASIN.
+ * public/CNAME (GitHub Pages özel alan adı) ile aynı kalmalı.
  */
-export const SITE_URL = 'https://shadeos.dev'
+export const SITE_URL = 'https://shade-os.com'
 
 export const site = {
   name: 'ShadeOS',

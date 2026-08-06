@@ -7,6 +7,15 @@ export function Footer() {
         <div className="footer__top">
           <div>
             <a className="brand" href="#top">
+              <img
+                className="brand__mark"
+                src="/mark-512.png"
+                width="512"
+                height="512"
+                alt=""
+                loading="lazy"
+                decoding="async"
+              />
               <span className="brand__dim">~/</span>
               {site.name.toLowerCase()}
             </a>
