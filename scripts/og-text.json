@@ -1,0 +1,15 @@
+{
+  "brand": "~/shadeos",
+  "title": "SHADEOS",
+  "tagline": "Windows. Fazlası değil.",
+  "description": "Sıfırdan derlenen, gereksiz yazılımlardan arındırılmış bağımsız bir Windows kurulum imajı.",
+  "disclaimer": "MICROSOFT İLE BAĞLANTISI YOKTUR",
+  "terminalTitle": "shadeos@build",
+  "terminalLines": [
+    { "tag": "$", "text": "shadeos build --target iso", "tone": "cmd" },
+    { "tag": "[ok]", "text": "kaynak imaj çözümlendi", "tone": "ok" },
+    { "tag": "[ok]", "text": "bileşen ağacı yeniden yazıldı", "tone": "ok" },
+    { "tag": "[ok]", "text": "bütünlük özeti hesaplandı", "tone": "ok" },
+    { "tag": "=>", "text": "ShadeOS-x64.iso hazır", "tone": "out" }
+  ]
+}

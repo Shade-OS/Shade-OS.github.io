@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="tr" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#000000" />
+
+    <!--
+      Başlık, açıklama, canonical, Open Graph, Twitter, ikonlar ve JSON-LD
+      derleme sırasında plugins/seo.ts tarafından src/data/site.ts'ten
+      türetilip buraya enjekte edilir. Elle etiket eklemeyin.
+    -->
+
+    <!-- Temayı boyamadan önce uygula: yanıp sönme (FOUC) olmaz. -->
+    <script>
+      ;(function () {
+        var el = document.documentElement
+        var theme = 'dark'
+        try {
+          var saved = localStorage.getItem('shadeos-theme')
+          if (saved === 'light' || saved === 'dark') {
+            theme = saved
+          } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+            theme = 'light'
+          }
+        } catch (e) {
+          /* localStorage kapalı — koyu temada kal */
+        }
+        el.dataset.theme = theme
+        var meta = document.querySelector('meta[name="theme-color"]')
+        if (meta) meta.content = theme === 'light' ? '#f1f1ee' : '#000000'
+      })()
+    </script>
+
+    <!-- JS kapalıysa: içerik ön-render edilmiş olarak zaten var, görünür kalsın. -->
+    <noscript>
+      <style>
+        .reveal {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+        .reveal .step,
+        .reveal .rel__row {
+          animation: none !important;
+          opacity: 1 !important;
+        }
+        .faq__a {
+          grid-template-rows: 1fr !important;
+        }
+        .progress,
+        .spot,
+        .grain {
+          display: none !important;
+        }
+      </style>
+    </noscript>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
