@@ -20,3 +20,5 @@ Pages'e gider. Elle bir şey yapmaya gerek yok.
 
 Özel alan adı `public/CNAME` dosyasından gelir; Vite `public/` altını
 olduğu gibi `dist/` içine kopyaladığı için her yayımda yerinde kalır.
+
+<!-- tetikleyici olcumu -->
