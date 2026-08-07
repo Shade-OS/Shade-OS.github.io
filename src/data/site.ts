@@ -30,7 +30,7 @@ export const site = {
     'windows kurulum imajı',
     'custom windows iso',
   ],
-  repo: 'https://github.com/',
+  repo: 'https://github.com/Shade-OS',
   contact: 'mailto:berkays0733@gmail.com',
 } as const
 
